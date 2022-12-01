@@ -4,36 +4,36 @@
 Console.Clear();
 string[] CreateArrayFromUser(int size)
 {
-string[] array = new string[size];
-for (int i = 0; i < size; i++)
-{
-array[i] = Console.ReadLine();
-}
-return array;
+    string[] array = new string[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = Console.ReadLine();
+    }
+    return array;
 }
 string[] FillArrayShortStrings(string[] array)
 {
-   int count = 0; 
-   for (int i = 0; i < array.Length; i++)
-   {
-        if(array[i].Length <= 3) count++;
-   }
-   string[] newArray = new string[count];
-   count = 0;
-   for (int i = 0; i < array.Length; i++)
-   {
-        if(array[i].Length <= 3)
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3) count++;
+    }
+    string[] newArray = new string[count];
+    count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
         {
             newArray[count] = array[i];
             count++;
         }
-   }
-   return newArray;
+    }
+    return newArray;
 }
 void PrintArray(string[] array)
 {
     Console.Write("[");
-    for(int i = 0; i < array.Length-1; i++)
+    for (int i = 0; i < array.Length - 1; i++)
     {
         Console.Write($"\"{array[i]}\",");
     }
