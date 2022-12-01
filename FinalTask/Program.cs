@@ -30,9 +30,19 @@ string[] FillArrayShortStrings(string[] array)
    }
    return newArray;
 }
+void PrintArray(string[] array)
+{
+    Console.Write("[");
+    for(int i = 0; i < array.Length-1; i++)
+    {
+        Console.Write($"\"{array[i]}\",");
+    }
+    Console.WriteLine($"\"{array[^1]}\"]");
+}
 
 Console.WriteLine("УКажите желаемый размер массива - любое целое положительное число: ");
 int lenght = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите любые слова или наборы букв любой длины через Enter: ");
 string[] strMassive = CreateArrayFromUser(lenght);
 string[] newStrMassive = FillArrayShortStrings(strMassive);
+PrintArray(newStrMassive);
